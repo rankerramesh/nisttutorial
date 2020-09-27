@@ -1,0 +1,32 @@
+﻿@model List<StudentModel>
+@{
+    ViewData["Title"] = "StudentList";
+    int counter = 1;
+}
+<h1>StudentList</h1>
+<p>This page lists all of the student in Banepa Nist 5th Batch !!</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th>SN.</th>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@counter</td>
+                <td>@student.StudentId</td>
+                <td>@student.StudentName</td>
+                <td>@student.Address</td>
+                <td>@student.PhoneNUmber</td>
+            </tr>
+            counter++;
+        }
+    </tbody>
+</table>
+
