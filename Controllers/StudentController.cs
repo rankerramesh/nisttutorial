@@ -51,6 +51,11 @@ namespace BanepaNistTutorial.Controllers
             student.Address = "Dhulikhel";
             student.PhoneNUmber = "dipendra's phone number";
             return View(student);
+
+
+
+
+
         }
     }
 }
