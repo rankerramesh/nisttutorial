@@ -1,6 +1,6 @@
 using System;
 
-namespace BanepaNistTutorial.Models
+namespace TestingNetNetCore.Models
 {
     public class ErrorViewModel
     {

@@ -1,0 +1,26 @@
+﻿@model List<PersonalDetail>
+@{
+    ViewData["Title"] = "People";
+    int counter = 1;
+}
+
+<h1>People</h1>
+
+
+<table border="1">
+    <tr>
+        <td>SN</td>
+        <td>Name</td>
+        <td>Address</td>
+        <td>Occupation</td>
+    </tr>
+    @foreach(var person in Model){
+    <tr>
+        <td>@counter</td>
+        <td>@person.FirstName</td>
+        <td>@person.Address</td>
+        <td>@person.Occupation</td>
+    </tr>
+        counter++;
+    }
+</table>
