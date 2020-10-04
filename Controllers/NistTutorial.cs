@@ -24,19 +24,48 @@ namespace TestingNetNetCore.Controllers
         }
         public IActionResult People()
         {
-            
-            
             return View(people);
         }
-        public IActionResult AddPeople(string name, string address, string occupation)
+        public IActionResult AddPerson()
         {
-            
-            people.Add(new PersonalDetail()
+            PersonalDetail pd = new PersonalDetail();
+            return View(pd);
+        }
+        public IActionResult AddPersonDetail(PersonalDetail pd)
+        {
+            if(ModelState.IsValid)
             {
-                FirstName = name,
-                Address = address,
-                Occupation = occupation
-            });
+                int personCount = people.Count;
+                personCount++;
+                pd.PersonalDetailId = personCount;
+                people.Add(pd);
+                return RedirectToAction("People");
+            }
+            else
+            {
+                return View("AddPerson",pd);
+            }
+            
+        }
+        public IActionResult EditPerson(int personDetailId)
+        {
+            PersonalDetail pd = new PersonalDetail();
+            pd = people.Where(item => item.PersonalDetailId == personDetailId).FirstOrDefault();
+            return View(pd);
+        }
+        public IActionResult EditPersonDetail(PersonalDetail pd)
+        {
+            PersonalDetail personInList = new PersonalDetail();
+            personInList = people.Where(item => item.PersonalDetailId == pd.PersonalDetailId).FirstOrDefault();
+            personInList.FirstName = pd.FirstName;
+            personInList.Occupation = pd.Occupation;
+            personInList.Address = pd.Address;
+            return RedirectToAction("People");
+        }
+        public IActionResult DeletePerson(int personDetailId)
+        {
+            PersonalDetail pd = people.Where(x => x.PersonalDetailId == personDetailId).FirstOrDefault();
+            people.Remove(pd);
             return RedirectToAction("People");
         }
     }

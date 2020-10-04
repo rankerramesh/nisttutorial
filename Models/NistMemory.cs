@@ -15,23 +15,26 @@ namespace TestingNetNetCore.Models
         }
         public static List<PersonalDetail> GetPeople()
         {
-            if (people.Count == 0)
-            {
-                people.Add(new PersonalDetail()
-                {
-                    FirstName = "dipendra",
-                    Address = "Banepa",
-                    Occupation = "Student"
-                });
-                people.Add(new PersonalDetail()
-                {
-                    FirstName = "aarati",
-                    Address = "Dhulikhel",
-                    Occupation = "Teacher"
-                });
-            }
+            //if (people.Count == 0)
+            //{
+            //    people.Add(new PersonalDetail()
+            //    {
+            //        FirstName = "dipendra",
+            //        Address = "Banepa",
+            //        Occupation = "Student",
+            //        PersonalDetailId=1
+            //    });
+            //    people.Add(new PersonalDetail()
+            //    {
+            //        FirstName = "aarati",
+            //        Address = "Dhulikhel",
+            //        Occupation = "Teacher",
+            //        PersonalDetailId = 2
+            //    });
+            //}
 
             return people;
         }
+        
     }
 }
