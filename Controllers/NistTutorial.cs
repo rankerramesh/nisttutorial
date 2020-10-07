@@ -68,5 +68,12 @@ namespace TestingNetNetCore.Controllers
             people.Remove(pd);
             return RedirectToAction("People");
         }
+
+        public IActionResult StingManipulation()
+        {
+            return View();
+
+        }
+
     }
 }
